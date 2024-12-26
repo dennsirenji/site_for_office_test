@@ -27,5 +27,5 @@ jobs:
           server: ${{ secrets.PROD_SERVER }}
           username: ${{ secrets.PROD_USERNAME }}
           password: ${{ secrets.PROD_PASSWORD }}
-          local-dir: ./dist/  # Astroのビルド出力ディレクトリ
+          local-dir: ./dist/
           server-dir: /nf.la/public_html/reserve.nf.la/
