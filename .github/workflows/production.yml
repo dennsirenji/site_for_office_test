@@ -1,0 +1,31 @@
+name: Deploy Astro to FTP
+on:
+  push:
+    branches:
+      - main  # もしくは master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Astroの推奨Node.jsバージョン
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.PROD_SERVER }}
+          username: ${{ secrets.PROD_USERNAME }}
+          password: ${{ secrets.PROD_PASSWORD }}
+          local-dir: ./dist/  # Astroのビルド出力ディレクトリ
+          server-dir: /nf.la/public_html/reserve.nf.la/
