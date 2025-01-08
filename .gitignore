@@ -1,8 +1,5 @@
 # build output
 dist/
-# generated types
-.astro/
-.idea/
 
 # dependencies
 node_modules/
@@ -20,3 +17,9 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+.astro
+
+# Vs Code
+.vscode/
+
