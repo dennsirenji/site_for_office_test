@@ -19,7 +19,7 @@
     "@astrolib/seo": "^1.0.0-beta.5",
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
-    "astro": "^4.15.4",
+    "astro": "^5.1.8",
     "preact": "^10.23.2",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
